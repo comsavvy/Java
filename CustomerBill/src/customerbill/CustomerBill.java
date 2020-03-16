@@ -41,13 +41,13 @@ public static void main(String[] args) {
     System.out.printf("White Board Marker\t%d\t\t%.2f\t\t%.2f\n",quantity[3], whiteBoardMarker, marker);
     System.out.printf("Scientific Calculator\t%d\t\t%.2f\t\t%.2f\n",quantity[4], scientificCalculator, calculator);
     
-    System.out.println();
+    System.out.println("\n");
     
     //Discount
-    System.out.printf("Subtotal for Books:\t\t%.2f\n", subTotalForBook);
-    System.out.printf("Discount:\t\t\t%.2f\n", book.discount(subTotalForBook));
-    System.out.printf("Subtotal for Stationary:\t%.2f\n", subTotalForStat);
-    System.out.printf("Discount:\t\t\t%.2f\n", stationary.discount(subTotalForStat)); 
-    System.out.printf("Total:\t\t\t\t%.2f\n", total);
+    System.out.printf("\t\t\tSubtotal for Books:\t\t%.2f\n", subTotalForBook);
+    System.out.printf("\t\t\tDiscount:\t\t\t%.2f\n", book.discount(subTotalForBook));
+    System.out.printf("\t\t\tSubtotal for Stationary:\t%.2f\n", subTotalForStat);
+    System.out.printf("\t\t\tDiscount:\t\t\t%.2f\n", stationary.discount(subTotalForStat)); 
+    System.out.printf("\t\t\tTotal:\t\t\t\t%.2f\n", total);
 }
 }
