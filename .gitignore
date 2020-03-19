@@ -1,6 +1,3 @@
-/Learning/nbproject/private/
-/Learning/build/
-/ CustomerBill/dist/CustomerBill.jar
-/CustomerBill/build/built-jar.properties
-/Employee/build/built-jar.properties
-/Employee/dist/Employee.jar
+*.properties
+*.xml
+*.jar
