@@ -12,28 +12,35 @@ public class GuessingGame {
     
     public static void main(String[] args) {
        int y= 2;
+       boolean confirm= true;
+       
        System.out.println("HELLO, I have number between 1-20\nCan you guess my number?\nBest of luck!");
-       outerLoop:
+       whileOuter:
        while(true){
-            byte guess=0;
+            int guess=0;
             byte secretNo= (byte)(random()*20);
-            byte counter= 0;            
+            int counter= 0;            
             
             forOuter:
             for(byte i=0; i<5; ++i){
                 int x=1;
                 do{
-                    if (x==0)System.out.println("Check-input");
-                    counter = (byte) ((byte)4 - i);
+                    if(confirm){
+                    counter = 4 - i;
                     System.out.printf("Guess: ");              
                      try{
-                    guess= input.nextByte();
+                    guess= input.nextInt();
                      }
                     catch (Exception e){
-                        System.out.println("Error! ");
-                        break forOuter;
+                        confirm= false;                 
+                        System.out.println("It must be a number and not Letter!");
+                        continue whileOuter;                        
     }
+                }
                 }while(x != 1);
+                
+                if(confirm){
+                    //Winning Point
                 if (guess==secretNo){
                     System.out.println("You Win!");
                     System.out.printf("Time of Guess was %d times\n", i+1);
@@ -43,28 +50,26 @@ public class GuessingGame {
                 else if (guess < secretNo)System.out.println("Too low");
                 if ( counter != 0)System.out.printf("Time-left is %d\n", counter); 
             }
+            }
+            //Losing Point
         if (secretNo!=guess)System.out.println("You Lose");     
             char playAgain;
-            int x = 1;
+            boolean x = true;
            do{  
-            if (x == 0 )System.out.println("Check-input!");
-            System.out.println("Do you want to play again[Y/N]? ");
-            //try{
+            if (x == false )System.out.println("Check-input!");
+            System.out.println("Do you want to play again[Y/N]? ");            
+                confirm= true;
                 playAgain= input.next().charAt(0);
                 switch (playAgain) {
                     case 'Y':
                     case 'y':
-                        continue outerLoop;
+                        continue whileOuter;
                     case 'N':
                     case 'n':
-                        break outerLoop;
+                        break whileOuter;
                     default:
-                        x=0;
+                        x= false;
                 }
-                //}
-                //catch(Exception e){
-                //  System.out.println("Invalid key\n");
-                //}
            }while(true);
     } 
     }
