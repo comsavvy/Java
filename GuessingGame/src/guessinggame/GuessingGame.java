@@ -8,16 +8,19 @@ package guessinggame;
 import static java.lang.Math.random;
 import java.util.Scanner;
 public class GuessingGame {
+    
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
+    
        int y= 2;
+       byte secretNo;
        boolean confirm= true;       
        boolean toRedo= true;
        System.out.println("HELLO, I have number between 1-20\nCan you guess my number?\nBest of luck!");
        whileOuter:
        while(true){
             int guess=0;
-            byte secretNo= (byte)((1+random())*10);
+            secretNo= (byte)((1+random())*10);
             int counter= 0;            
             
             forOuter:
@@ -33,7 +36,7 @@ public class GuessingGame {
                     catch (Exception e){
                         confirm= false;   
                         toRedo= false;
-                        System.out.println("It must be a number and not Letter!");
+//                        System.out.println("It must be a number and not Letter!");
                         continue whileOuter;                        
     }
                 }
@@ -52,7 +55,7 @@ public class GuessingGame {
             }
             }
             //Losing Point
-        if (secretNo!=guess)System.out.println("You Lose");     
+        if (secretNo!=guess)System.out.println("You Lose!");     
             char playAgain;
             boolean x = true;
            do{ 
@@ -60,6 +63,7 @@ public class GuessingGame {
                if (toRedo==false){
                    garbageError= input.next();
                    toRedo= true;
+                   System.out.printf("Because you Enter /'%s'/\n", garbageError);
                }
                else if(toRedo){
                     if (!x){
@@ -67,7 +71,7 @@ public class GuessingGame {
                         System.out.println("Check-input!");
                         continue;
                     }
-                    else if(x){              
+                    else if(x){                                   
                     System.out.println("Do you want to play again[Y/N]? ");            
                         confirm= true;                
                         playAgain= input.next().charAt(0);
