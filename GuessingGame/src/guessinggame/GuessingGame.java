@@ -9,16 +9,15 @@ import static java.lang.Math.random;
 import java.util.Scanner;
 public class GuessingGame {
     static Scanner input = new Scanner(System.in);
-    
     public static void main(String[] args) {
        int y= 2;
-       boolean confirm= true;
-       
+       boolean confirm= true;       
+       boolean toRedo= true;
        System.out.println("HELLO, I have number between 1-20\nCan you guess my number?\nBest of luck!");
        whileOuter:
        while(true){
             int guess=0;
-            byte secretNo= (byte)(random()*20);
+            byte secretNo= (byte)((1+random())*10);
             int counter= 0;            
             
             forOuter:
@@ -32,7 +31,8 @@ public class GuessingGame {
                     guess= input.nextInt();
                      }
                     catch (Exception e){
-                        confirm= false;                 
+                        confirm= false;   
+                        toRedo= false;
                         System.out.println("It must be a number and not Letter!");
                         continue whileOuter;                        
     }
@@ -55,22 +55,35 @@ public class GuessingGame {
         if (secretNo!=guess)System.out.println("You Lose");     
             char playAgain;
             boolean x = true;
-           do{  
-            if (x == false )System.out.println("Check-input!");
-            System.out.println("Do you want to play again[Y/N]? ");            
-                confirm= true;
-                playAgain= input.next().charAt(0);
-                switch (playAgain) {
-                    case 'Y':
-                    case 'y':
-                        continue whileOuter;
-                    case 'N':
-                    case 'n':
-                        break whileOuter;
-                    default:
-                        x= false;
-                }
-           }while(true);
-    } 
+           do{ 
+               String garbageError;
+               if (toRedo==false){
+                   garbageError= input.next();
+                   toRedo= true;
+               }
+               else if(toRedo){
+                    if (!x){
+                        x= true;
+                        System.out.println("Check-input!");
+                        continue;
+                    }
+                    else if(x){              
+                    System.out.println("Do you want to play again[Y/N]? ");            
+                        confirm= true;                
+                        playAgain= input.next().charAt(0);
+                        switch (playAgain) {
+                            case 'Y':
+                            case 'y':
+                                continue whileOuter;
+                            case 'N':
+                            case 'n':
+                                break whileOuter;
+                            default:
+                                x= false;
+                        }
+                        }
+               }
+                   }while(true);
+    }
     }
     }
