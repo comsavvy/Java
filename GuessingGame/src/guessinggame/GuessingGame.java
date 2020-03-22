@@ -32,14 +32,13 @@ public class GuessingGame {
                     System.out.printf("Guess: ");              
                      try{
                     guess= input.nextInt();
-                     }
+            }
                     catch (Exception e){
                         confirm= false;   
                         toRedo= false;
-//                        System.out.println("It must be a number and not Letter!");
                         continue whileOuter;                        
     }
-                }
+            }
                 }while(x != 1);
                 
                 if(confirm){
@@ -48,7 +47,7 @@ public class GuessingGame {
                     System.out.println("You Win!");
                     System.out.printf("Time of Guess was %d times\n", i+1);
                     break;
-                }
+            }
                 else if (guess > secretNo)System.out.println("Too High!");
                 else if (guess < secretNo)System.out.println("Too low");
                 if ( counter != 0)System.out.printf("Time-left is %d\n", counter); 
@@ -64,13 +63,13 @@ public class GuessingGame {
                    garbageError= input.next();
                    toRedo= true;
                    System.out.printf("Because you Enter /'%s'/\n", garbageError);
-               }
+            }
                else if(toRedo){
                     if (!x){
                         x= true;
                         System.out.println("Check-input!");
                         continue;
-                    }
+            }
                     else if(x){                                   
                     System.out.println("Do you want to play again[Y/N]? ");            
                         confirm= true;                
@@ -84,10 +83,10 @@ public class GuessingGame {
                                 break whileOuter;
                             default:
                                 x= false;
-                        }
-                        }
-               }
-                   }while(true);
+            }
+            }
+            }
+            }while(true);
     }
     }
     }
