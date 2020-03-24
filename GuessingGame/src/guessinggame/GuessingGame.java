@@ -11,8 +11,6 @@ public class GuessingGame {
     
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-    
-       int y= 2;
        byte secretNo;
        boolean confirm= true;       
        boolean toRedo= true;
@@ -68,7 +66,6 @@ public class GuessingGame {
                     if (!x){
                         x= true;
                         System.out.println("Check-input!");
-                        continue;
             }
                     else if(x){                                   
                     System.out.println("Do you want to play again[Y/N]? ");            
