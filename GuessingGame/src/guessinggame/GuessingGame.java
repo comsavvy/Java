@@ -35,8 +35,7 @@ public class GuessingGame {
                         confirm= false;   
                         toRedo= false;
                         continue whileOuter;                        
-    }
-            }
+    }}
                 }while(x != 1);
                 
                 if(confirm){
@@ -49,8 +48,7 @@ public class GuessingGame {
                 else if (guess > secretNo)System.out.println("Too High!");
                 else if (guess < secretNo)System.out.println("Too low");
                 if ( counter != 0)System.out.printf("Time-left is %d\n", counter); 
-            }
-            }
+            }}
             //Losing Point
         if (secretNo!=guess)System.out.println("You Lose!");     
             char playAgain;
@@ -80,10 +78,6 @@ public class GuessingGame {
                                 break whileOuter;
                             default:
                                 x= false;
-            }
-            }
-            }
+            }}}
             }while(true);
-    }
-    }
-    }
+    }}}
