@@ -70,11 +70,9 @@ public class GuessingGame {
                         confirm= true;                
                         playAgain= input.next().charAt(0);
                         switch (playAgain) {
-                            case 'Y':
-                            case 'y':
+                            case 'Y': case 'y':
                                 continue whileOuter;
-                            case 'N':
-                            case 'n':
+                            case 'N': case 'n':
                                 break whileOuter;
                             default:
                                 x= false;
