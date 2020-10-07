@@ -39,14 +39,14 @@ public class GuessingGame {
                 }while(x != 1);
                 
                 if(confirm){
-                    //Winning Point
-                if (guess==secretNo){
-                    System.out.println("You Win!");
-                    System.out.printf("Time of Guess was %d times\n", i+1);
-                    break;
-            }
-                else if (guess > secretNo)System.out.println("Too High!");
-                else if (guess < secretNo)System.out.println("Too low");
+						//Winning Point
+					if (guess==secretNo){
+						System.out.println("You Win!");
+						System.out.printf("Time of Guess was %d times\n", i+1);
+						break;
+				}
+					else if (guess > secretNo)System.out.println("Too High!");
+					else if (guess < secretNo)System.out.println("Too low");
                 if ( counter != 0)System.out.printf("Time-left is %d\n", counter); 
             }}
             //Losing Point

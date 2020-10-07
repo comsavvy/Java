@@ -1,3 +1,4 @@
+.gitignore
 GuessingGame/build/*
 GuessingGame/dist/*
 
@@ -17,3 +18,28 @@ time/nbproject/*
 
 GuessingGame/nbproject/*
 
+/Guess/nbproject/private/
+/Guess/build/
+/Guess/dist/
+/IntroToGUIi/dist/
+/SecondGui/nbproject/private/
+/SecondGui/build/
+/SecondGui/dist/
+/GUI/Buttons/nbproject/private/
+/GUI/Buttons/build/
+/GUI/Checkbox/nbproject/private/
+/GUI/Checkbox/build/
+/GUI/RadioButton/nbproject/private/
+/GUI/RadioButton/build/
+/GUI/RadioButton/dist/
+/GUI/DropDownList/nbproject/private/
+/GUI/DropDownList/build/
+/GUI/List/nbproject/private/
+/GUI/List/build/
+/GUI/List/dist/
+/GUI/ListMultipleSelection/nbproject/private/
+/GUI/ListMultipleSelection/build/
+/GUI/ListMultipleSelection/dist/
+/GUI/MousePanel/nbproject/private/
+/GUI/MousePanel/build/
+/GUI/MousePanel/dist/
